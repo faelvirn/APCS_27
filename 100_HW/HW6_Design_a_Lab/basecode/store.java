@@ -1,12 +1,6 @@
-/*
- *	Author:
- *  Date:
- * 	Collaborator:
- */
-
 import java.util.*;
 
-public class starter {
+public class store {
     public static void main(String[] args) {
         
     }

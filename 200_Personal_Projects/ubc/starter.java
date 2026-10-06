@@ -1,23 +1,16 @@
 import java.util.*;
 
-import java.awt.BorderLayout;
-import java.awt.LayoutManager;
-
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
 public class starter {
+  String name = "Dalyria";
+  ArrayList <String> inventory = new ArrayList<>();
+  String location = "Szarr Palace";
+  int day = 1;
   public static void main(String args[]) {
-    String name = "Dalyria";
-    ArrayList <String> inventory = new ArrayList();
-    String location = "Szarr Palace";
-    int day = 1;
     day();
   }
   public static void day(){
     Scanner input = new Scanner (System.in);
+    starter game = new starter();
     System.out.println("You are Dalyria");
     System.out.println("You have been sleeping, but now dusk has come, and wakefulness with it");
     System.out.println("This is because you are a vampire");
@@ -51,16 +44,37 @@ public class starter {
     }
     else if(action == 2){
       System.out.println("They would be fools to try to hide anything here, but one always tries do so nonetheless");
-      System.out.println("You comb through the sheets and their tangles. A few of the beds have pillows. Yours does, as does your oldest sister and youngest brothers. Reward for good behavior.");
+      System.out.println("You comb through the sheets and their tangles. A few of the beds have pillows. Yours does, as does your oldest sister and youngest brother. Reward for good behavior.");
       System.out.println("Your oldest sister has nothing, of course. She has naught to hide.");
-
-      System.out.println("In your brother's bed, you find a spool of thread and a pair of scissors tucked away beneath the sheets");
+      System.out.println("You do, of course. But not here");
+      System.out.println("");
+      System.out.println("In your oldest brother's bed, you find a spool of thread and a pair of scissors tucked away beneath the sheets");
       System.out.println("1. Take the thread \n2. Take the scissors \n3. Leave");
-      answer = input.nextInt();
-      if(answer > 2){
-        break;
+      action = input.nextInt();
+      if(action == 1){
+        game.inventory.add("thread");
+        System.out.println("1. Take the scissors \n2. Leave");
+        action = input.nextInt();
+        if(action == 1){
+          game.inventory.add("scissors");
+          System.out.println("1. Leave");
+          while(action != 1){
+		        action = input.nextInt();
+	        } 
+        }
       }
-    }
+      if(action == 2){
+        game.inventory.add("scissors");
+        System.out.println("1. Take the thread \n2. Leave");
+        action = input.nextInt();
+        if(action == 1){
+          game.inventory.add("scissors");
+          System.out.println("1. Leave");
+        }
+      }
+      while(action != 1 || action < 3){
+		        action = input.nextInt();
+	        } 
         
     //   JFrame frame = new JFrame("Swing Tester");
     //   frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,5 +85,6 @@ public class starter {
     // System.out.println("|    |");
     // System.out.println("|    |");
     // System.out.println(" -----");
+    }
   }
 }

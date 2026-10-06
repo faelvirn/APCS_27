@@ -45,14 +45,38 @@ class starter {
 		System.out.println("You have " + points + " left to spend");
 		System.out.print("Dexterity (1-10): ");
 		int dexterity = input.nextInt();
+		if(dexterity > 10){
+			System.out.println("The maximum amount of points is 10");
+			dexterity = input.nextInt();
+		}
+		else if(dexterity < 1)[
+			System.out.println("The minimum amount of points is 1");
+			dexterity = input.nextInt();
+		]
 		points = points-dexterity;
 		System.out.println("You have " + points + " left to spend");
 		System.out.print("Intelligence (1-10): ");
 		int intelligence = input.nextInt();
+		if(intelligence > 10){
+			System.out.println("The maximum amount of points is 10");
+			intelligence = input.nextInt();
+		}
+		else if(intelligence < 1)[
+			System.out.println("The minimum amount of points is 1");
+			intelligence = input.nextInt();
+		]
 		points = points-intelligence;
 		System.out.println("You have " + points + " left to spend");
 		System.out.print("Charisma (1-10): ");
 		int charisma = input.nextInt();
+		if(charisma > 10){
+			System.out.println("The maximum amount of points is 10");
+			charisma = input.nextInt();
+		}
+		else if(charisma < 1)[
+			System.out.println("The minimum amount of points is 1");
+			charisma = input.nextInt();
+		]
 		points = points-charisma;
 		System.out.println("You have " + points + " left to spend");
 		System.out.println("Strength (1-10): " + strength + "\nDexterity (1-10): " + dexterity + "\nIntelligence (1-10): " + intelligence + "\nCharisma (1-10): " + charisma);

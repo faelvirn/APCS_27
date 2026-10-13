@@ -14,7 +14,8 @@ class starter {
 
 	public static void main(String args[]) throws InterruptedException {
 		// Write your code here!
-
+		System.out.println("Welcome to the typing game!");
+		System.out.println("Do you want to 1) try typing a random sentance; 2) choose a sentance to type; or 3) quit?")
 		
 	}
 

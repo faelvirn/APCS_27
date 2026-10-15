@@ -22,7 +22,6 @@ class starter {
 			if(answer == 2){
 				System.out.println("What is the key?");
 				int key = input.nextInt();
-				input.nextInt();
 				String message = Cipher.keyedEncode(code, key);
 				System.out.println("The message is " + message);
 			}

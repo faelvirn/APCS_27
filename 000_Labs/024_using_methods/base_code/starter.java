@@ -13,10 +13,65 @@ class starter {
 	static ArrayList<String> arr = new ArrayList<String>();
 
 	public static void main(String args[]) throws InterruptedException {
-		// Write your code here!
+		Scanner input = new Scanner(System.in);
+		populateArrayList();
+		String localtm = getTime();
+		System.out.println(localtm);
+		System.out.println();
 		System.out.println("Welcome to the typing game!");
-		System.out.println("Do you want to 1) try typing a random sentance; 2) choose a sentance to type; or 3) quit?")
-		
+		boolean play = true;
+		while(play == true){
+			System.out.println("Do you want to 1) try typing a random sentence; 2) choose a sentence to type; or 3) quit?");
+			int choice = input.nextInt();
+			if(choice == 1){
+				String sentence = getSentence();
+				int length = lettersInSentence(sentence);
+				System.out.println("Ready to start?");
+				String start = input.nextLine();
+				start = input.nextLine();
+				if(start.equalsIgnoreCase("yes")){
+					countdown();
+					System.out.println("Your sentence is: " + sentence);
+					startTimer();
+					String attempt = input.nextLine();
+					double time = endTimer();
+					int errors = compareSentences(sentence, attempt);
+					System.out.println("Nice job! Here are your results:");
+					System.out.println("Time: "+ time);
+					System.out.println("Errors: " + errors + " / " + length);
+					System.out.println((attempt.length()/time)*60 + " letters per minute");
+					int words = wordsInSentence(attempt);
+					System.out.println((words/time)*60 + " words per minute");
+				}
+			}
+			else if(choice == 2){
+				System.out.println("What is the index (number) of the sentence would you like to type?");
+				int sentencenum = input.nextInt();
+				String sentence = getSentence(sentencenum);
+				System.out.println("Your sentence is: " + sentence);
+				int length = lettersInSentence(sentence);
+				System.out.println("Ready to start?");
+				String start = input.nextLine();
+				start = input.nextLine();
+				if(start.equalsIgnoreCase("yes")){
+					countdown();
+					System.out.println(sentence);
+					startTimer();
+					String attempt = input.nextLine();
+					double time = endTimer();
+					int errors = compareSentences(sentence, attempt);
+					System.out.println("Nice job! Here are your results:");
+					System.out.println("Time: "+ time);
+					System.out.println("Errors: " + errors + " / " + length);
+					System.out.println((attempt.length()/time)*60 + " letters per minute");
+					int words = wordsInSentence(attempt);
+					System.out.println((words/time)*60 + " words per minute");
+				}
+			}
+			else{
+				break;
+			}
+		}
 	}
 
 	// This method returns the local current time as a String
@@ -104,6 +159,14 @@ class starter {
 				errors++;
 			given = given.substring(1);
 			typed = typed.substring(1);
+		}
+		if(given.length() != typed.length()){
+			if(given.length() > typed.length()){
+				errors = errors+(given.length()-typed.length());
+			}
+			if(given.length() < typed.length()){
+				errors = errors+(typed.length()-given.length());
+			}
 		}
 		return errors;
 	}

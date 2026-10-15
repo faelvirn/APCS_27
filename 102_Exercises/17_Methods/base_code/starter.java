@@ -9,11 +9,42 @@ import java.util.Random;
 
 class starter {
 	// The goal of the first method is to give back whether the year given is a leap year or not. 2004 is a leap year.
+	public static boolean isLeapYear(int year){
+		if(year % 100 == 0 && year % 400 != 0){
+			return false;
+		}
+		else if(year % 100 == 0 && year % 400 == 0){
+			return true;
+		}
+		else if(year % 4 == 0){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 
 	// The goal of the second method is to add all the digits of a number up. Ex: 12345 has a total of 15.
+	public static int getDigitSum(int number){
+		int total = 0;
+		while(number > 10){
+			total = total+number % 10;
+			number = number/10;
+		}
+		total = total+number % 10;
+		return total;
+	}
 
-	// The goal of the third method is to check if 3 numbers are consecutive. 15 16 17 are consecutive. It will print if they are or not.
-	// Assume that the first number is always the smallest and the third number is always the largest.
+	// // The goal of the third method is to check if 3 numbers are consecutive. 15 16 17 are consecutive. It will print if they are or not.
+	// // Assume that the first number is always the smallest and the third number is always the largest.
+	public static void printIfConsecutive(int num1, int num2, int num3){
+		if(num2 == num1+1 && num3 == num2+1){
+			System.out.println("These numbers are consecutive");
+		}
+		else{
+			System.out.println("These numbers are not consecutive");
+		}
+	}
 
 	public static void main(String args[]) {
 		System.out.println("----------------------------------------");
@@ -26,7 +57,6 @@ class starter {
 		else
 			System.out.println(year + " is not a leap year!");
 
-		System.out.println();
 		System.out.println("----------------------------------------");
 		System.out.println("Enter a 5 digit number");
 		int number = sc.nextInt();
@@ -34,7 +64,6 @@ class starter {
 		System.out.println();
 		System.out.println("The sum of the digits of " + number + " is " + sum);
 
-		System.out.println();
 		System.out.println("----------------------------------------");
 		System.out.println("Enter a number");
 		int num1 = sc.nextInt();

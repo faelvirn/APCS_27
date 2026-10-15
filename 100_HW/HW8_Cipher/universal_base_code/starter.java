@@ -9,7 +9,8 @@ import java.util.Scanner;
 
 class starter {
 	public static void main(String args[]) {
-		// Your code goes below here
+		Scanner input = new Scanner(System.in);
+		System.out.println("What do you want to encode/decode?");
 		
 
 	}

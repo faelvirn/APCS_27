@@ -54,6 +54,7 @@ public class Employee {
 		System.out.println("Employee First Name: " + firstName);
 		System.out.println("Employee Last Name: " + lastName);
 		System.out.println("Employee Salary: " + salary);
+		System.out.println("Employee Annual Salary: " + getAnnualSalary());
 		System.out.println("------------------------------");
 		System.out.println("");
 	}

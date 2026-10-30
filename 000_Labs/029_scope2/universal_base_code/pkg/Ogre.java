@@ -8,12 +8,13 @@ import java.util.Scanner;
 import java.util.Random;
 
 
-private class Ogre {
-	private String name;
+public class Ogre {
+	public String name;
+	public boolean ugly;
 
 	public Ogre() {
 		name = "Shrek";
-		boolean ugly = true;
+		ugly = true;
 	}
 
 	private String getName(){
@@ -24,7 +25,7 @@ private class Ogre {
 		return ugly;
 	}
 
-	private void interact(Donkey donkey){
+	public void interact(Donkey donkey){
 		System.out.println(donkey.name + ", what are you doing in my swamp?!");
 		return;
 	}

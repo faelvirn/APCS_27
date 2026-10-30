@@ -24,7 +24,34 @@ class starter {
 
 	public static void main(String args[]) {
 		// Your code goes below here
-		PooleDwarf test = new PooleDwarf();
+		PooleDwarf dwarf1 = new PooleDwarf(randName());
+		PooleDwarf dwarf2 = new PooleDwarf(randName());
+		PooleDwarf dwarf3 = new PooleDwarf(randName());
+		PooleDwarf dwarf4 = new PooleDwarf(randName());
+		PooleDwarf dwarf5 = new PooleDwarf(randName());
+		PooleDwarf dwarf6 = new PooleDwarf(randName());
+		PooleDwarf dwarf7 = new PooleDwarf(randName());
+		String name1 = dwarf1.getName();
+		int duplicates = 0;
+		if(dwarf2.isSameName(name1)){
+			duplicates++;
+		}
+		if(dwarf3.isSameName(name1)){
+			duplicates++;
+		}
+		if(dwarf4.isSameName(name1)){
+			duplicates++;
+		}
+		if(dwarf5.isSameName(name1)){
+			duplicates++;
+		}
+		if(dwarf6.isSameName(name1)){
+			duplicates++;
+		}
+		if(dwarf7.isSameName(name1)){
+			duplicates++;
+		}
+		System.out.println("There are " + duplicates + " duplicates of " + name1);
 		
 	}
 }

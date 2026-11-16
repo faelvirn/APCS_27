@@ -10,10 +10,15 @@ import java.util.Random;
 
 class starter {
 	public static void main(String args[]) {
-		// Your code goes below here
-		BaseClass test = new BaseClass();
-
-
-		
+		int[] array = new int[10];
+		for(int i = 0; i < array.length; i++){
+			if(i == 0){
+				array[i] = 9;
+			}
+			else{
+				array[i] = array[i-1] - 1;
+			}
+			System.out.println(array[i]);
+		}
 	}
 }
